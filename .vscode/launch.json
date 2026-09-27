@@ -1,0 +1,40 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run chatbot server",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/app.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "justMyCode": true
+    },
+    {
+      "name": "Evaluate accuracy",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/tests/evaluate.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "Evaluate: threshold sweep",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/tests/evaluate.py",
+      "args": ["--sweep"],
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "Evaluate: typo robustness",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/tests/evaluate.py",
+      "args": ["--noise"],
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}"
+    }
+  ]
+}

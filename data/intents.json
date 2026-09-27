@@ -1,0 +1,653 @@
+{
+  "business": {
+    "name": "Northwind Cycles",
+    "domain": "bicycle retail and service",
+    "support_email": "help@northwindcycles.example",
+    "support_phone": "+1 555 0142"
+  },
+  "fallback": {
+    "responses": [
+      "I didn't catch that one. I can help with orders, shipping, returns, sizing, service bookings and warranty. Which is closest?",
+      "That's outside what I've been trained on. Try asking about delivery, returns, bike sizing or booking a service slot.",
+      "I'm not sure yet. Rephrase it for me, or type 'agent' to reach a person."
+    ],
+    "quick_replies": [
+      "Track my order",
+      "Return policy",
+      "Book a service",
+      "Talk to a person"
+    ]
+  },
+  "clarify": {
+    "prompt": "I want to get this right. Did you mean one of these?"
+  },
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "hi",
+        "hello",
+        "hey there",
+        "good morning",
+        "good evening",
+        "hiya",
+        "hey",
+        "is anyone there",
+        "hello anyone",
+        "yo",
+        "hi there",
+        "howdy",
+        "good afternoon",
+        "hey bot",
+        "start",
+        "hello there bot",
+        "good day",
+        "anyone online"
+      ],
+      "responses": [
+        "Hi, welcome to Northwind Cycles. Ask me about an order, shipping, returns, sizing or booking a service.",
+        "Hello. I can look up orders, explain returns and book workshop slots. What do you need?"
+      ],
+      "quick_replies": [
+        "Track my order",
+        "Find my frame size",
+        "Book a service"
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": [
+        "bye",
+        "goodbye",
+        "see you",
+        "that's all",
+        "thats all thanks",
+        "im done",
+        "i am done",
+        "nothing else",
+        "later",
+        "catch you later",
+        "end chat",
+        "close chat",
+        "that is everything",
+        "all good bye",
+        "im finished",
+        "goodbye now",
+        "thats it for now"
+      ],
+      "responses": [
+        "Ride safe. Reopen this chat any time.",
+        "Glad to help. The workshop is open 9am to 6pm if you need a human."
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": [
+        "thanks",
+        "thank you",
+        "thanks a lot",
+        "appreciate it",
+        "cheers",
+        "thx",
+        "ty",
+        "that helped",
+        "perfect thanks",
+        "great thanks",
+        "awesome thank you",
+        "thankyou",
+        "thank u",
+        "thanks so much",
+        "many thanks",
+        "brilliant thanks",
+        "lovely thanks",
+        "thanks for the help"
+      ],
+      "responses": [
+        "Any time. Anything else?",
+        "Happy to help. What else can I pull up?"
+      ]
+    },
+    {
+      "tag": "order_status",
+      "patterns": [
+        "where is my order",
+        "track my order",
+        "order status",
+        "has my bike shipped",
+        "when will my order arrive",
+        "track package",
+        "tracking number",
+        "check my order",
+        "i want to track my parcel",
+        "my order hasnt arrived",
+        "order not delivered yet",
+        "whats happening with my order",
+        "delivery status",
+        "where is my parcel",
+        "any update on my order",
+        "whats the update on my purchase",
+        "i ordered last week and nothing arrived",
+        "my order is taking long",
+        "still waiting for my order",
+        "chase my order",
+        "give me an update on delivery",
+        "nothing has turned up yet",
+        "has it been dispatched",
+        "is my order dispatched",
+        "when was my order sent"
+      ],
+      "responses": [
+        "I can check that. What's your order number? It looks like NW-12345 and is in your confirmation email.",
+        "Sure. Send me the order number from your confirmation email (format NW-12345) and I'll pull up the status."
+      ],
+      "slot": "order_id",
+      "slot_response": "Order {order_id} is packed and left our Leeds warehouse. Tracking updates land within 4 hours of dispatch, and full bikes take 3-5 working days. Want the courier link?",
+      "quick_replies": [
+        "Yes, send tracking",
+        "It's late",
+        "Change address"
+      ]
+    },
+    {
+      "tag": "shipping_info",
+      "patterns": [
+        "how long does shipping take",
+        "delivery time",
+        "shipping cost",
+        "do you offer free delivery",
+        "how much is postage",
+        "when will it be delivered",
+        "shipping options",
+        "do you deliver next day",
+        "express delivery",
+        "is delivery free",
+        "how fast is shipping",
+        "delivery charges",
+        "postage price",
+        "how long till delivery",
+        "when will it arrive",
+        "how soon will it get here",
+        "how much is shipping on a helmet",
+        "what does delivery cost",
+        "speed of delivery",
+        "how quickly do you send things",
+        "arrival time",
+        "dispatch time",
+        "time to arrive",
+        "do you do next day",
+        "how soon will it get to me",
+        "when will my parcel arrive",
+        "how many days until arrival",
+        "how soon does my order arrive",
+        "when does delivery normally arrive",
+        "how many days before it arrives here"
+      ],
+      "responses": [
+        "Accessories ship in 1-2 working days, complete bikes in 3-5. Delivery is free over £60, otherwise £4.95. Next-day is £9.95 if you order before 2pm.",
+        "Standard delivery is 1-2 days for parts and 3-5 for bikes. Free above £60, £4.95 below, and next-day costs £9.95 on orders placed before 2pm."
+      ],
+      "quick_replies": [
+        "International shipping",
+        "Track my order"
+      ]
+    },
+    {
+      "tag": "international_shipping",
+      "patterns": [
+        "do you ship internationally",
+        "can you deliver abroad",
+        "shipping to ireland",
+        "do you ship to europe",
+        "overseas delivery",
+        "international orders",
+        "can i order from france",
+        "do you deliver outside the uk",
+        "worldwide shipping",
+        "shipping to usa",
+        "customs charges",
+        "send abroad",
+        "ship to another country",
+        "deliver to spain",
+        "post to netherlands",
+        "can you send outside the country",
+        "export orders",
+        "do you ship to belgium"
+      ],
+      "responses": [
+        "We ship to the EU, Ireland and Norway. Parts take 5-8 working days, complete bikes 7-12. Duties are collected at checkout so nothing is owed on arrival.",
+        "Yes, to the EU, Ireland and Norway. Expect 5-8 days for parts and 7-12 for bikes, with import duties already paid at checkout."
+      ]
+    },
+    {
+      "tag": "returns_policy",
+      "patterns": [
+        "what is your return policy",
+        "can i return this",
+        "how do i return an item",
+        "i want a refund",
+        "return a bike",
+        "refund policy",
+        "money back",
+        "i changed my mind",
+        "can i send it back",
+        "exchange an item",
+        "wrong item sent",
+        "item doesnt fit can i return",
+        "return window",
+        "how many days to return",
+        "return time limit",
+        "too small can i exchange",
+        "doesnt fit can i swap",
+        "send back for refund",
+        "give me a refund",
+        "how do refunds work",
+        "what if i dont like it",
+        "returning an unwanted item",
+        "can i send this item back",
+        "how do i send it back to you",
+        "can i post this item back to you",
+        "how do i return this back to the shop",
+        "i would like to send the product back"
+      ],
+      "responses": [
+        "You have 30 days from delivery. Items need to be unused with tags on; bikes must be unridden. Start it from Orders > Return, print the label, and refunds land 5 working days after we receive the parcel.",
+        "Returns are open for 30 days on unused items and unridden bikes. Use Orders > Return in your account for a prepaid label. Refunds take about 5 working days once it reaches us."
+      ],
+      "quick_replies": [
+        "Start a return",
+        "Faulty item",
+        "Track my refund"
+      ]
+    },
+    {
+      "tag": "cancel_order",
+      "patterns": [
+        "cancel my order",
+        "i want to cancel",
+        "stop my order",
+        "cancel the purchase",
+        "can i cancel",
+        "i ordered by mistake",
+        "please cancel order",
+        "cancel before it ships",
+        "how do i cancel an order",
+        "cancel it before dispatch",
+        "scrap my order",
+        "dont send it",
+        "call off my order",
+        "i no longer want it"
+      ],
+      "responses": [
+        "If it hasn't been picked yet I can stop it. Orders cancel free within 60 minutes from Orders > Cancel. After dispatch, refuse the delivery or send it back under the 30-day return policy.",
+        "Cancellation is free within 60 minutes of ordering, via Orders > Cancel. Once it's dispatched, treat it as a return instead."
+      ]
+    },
+    {
+      "tag": "sizing_help",
+      "patterns": [
+        "what size bike do i need",
+        "frame size",
+        "size guide",
+        "i am 5 foot 9 what size",
+        "how do i measure for a bike",
+        "which size should i buy",
+        "sizing chart",
+        "is medium right for me",
+        "what size frame for my height",
+        "bike fit",
+        "size for 170cm",
+        "am i between sizes",
+        "what frame for 182cm",
+        "which size for my height",
+        "is large too big",
+        "is small too small for me",
+        "help me choose a size",
+        "which frame suits me",
+        "what size should i order",
+        "size recommendation"
+      ],
+      "responses": [
+        "Frame size follows inside-leg more than height. Under 165cm is small, 165-178cm medium, 178-188cm large, above that XL. Between two sizes, go smaller for city riding and larger for distance.",
+        "Measure your inside leg against the size chart on each product page. Roughly: small under 165cm, medium 165-178cm, large 178-188cm, XL beyond. Sizing down suits commuting, sizing up suits long rides."
+      ],
+      "quick_replies": [
+        "Book a fitting",
+        "Return policy"
+      ]
+    },
+    {
+      "tag": "service_booking",
+      "patterns": [
+        "book a service",
+        "i need a repair",
+        "workshop appointment",
+        "can you fix my bike",
+        "schedule a tune up",
+        "book my bike in",
+        "service appointment",
+        "repair booking",
+        "my gears need adjusting",
+        "brake service",
+        "puncture repair",
+        "bike servicing prices",
+        "i want to book maintenance",
+        "book my bike for a service",
+        "cost of a service",
+        "price of servicing",
+        "gears slipping can you fix",
+        "squeaky brakes appointment",
+        "wheel true service",
+        "get my bike looked at",
+        "annual service booking",
+        "squeaky brakes need looking at",
+        "brakes making noise can you check",
+        "brakes squeaking need a checkup",
+        "noisy brakes want them checked",
+        "brake squeal needs fixing"
+      ],
+      "responses": [
+        "The workshop books online at northwindcycles.example/service. A safety check is £25, full service £79, and drivetrain rebuilds start at £120. Same-week slots usually exist Tuesday to Thursday.",
+        "Book workshop slots at northwindcycles.example/service. Safety check £25, full service £79, drivetrain rebuild from £120. Midweek slots are the easiest to get."
+      ],
+      "quick_replies": [
+        "Opening hours",
+        "Talk to a person"
+      ]
+    },
+    {
+      "tag": "warranty",
+      "patterns": [
+        "is there a warranty",
+        "warranty period",
+        "my frame cracked",
+        "warranty claim",
+        "how long is the guarantee",
+        "is this covered",
+        "broken after a month",
+        "defective product",
+        "faulty item",
+        "my bike broke",
+        "guarantee on parts",
+        "the frame has a crack",
+        "frame cracked",
+        "it broke after a few weeks",
+        "is it still under guarantee",
+        "claim under warranty",
+        "part failed early",
+        "snapped after light use",
+        "is this covered by the guarantee"
+      ],
+      "responses": [
+        "Frames carry a 5-year warranty, components 2 years, and consumables like tyres and brake pads aren't covered. Send photos plus your order number to help@northwindcycles.example and the workshop replies within 2 working days.",
+        "5 years on frames, 2 on components, nothing on wear items. Email photos and your order number to help@northwindcycles.example for a claim; you'll hear back in 2 working days."
+      ]
+    },
+    {
+      "tag": "payment_options",
+      "patterns": [
+        "what payment methods do you accept",
+        "can i pay with paypal",
+        "do you take amex",
+        "payment options",
+        "can i pay in installments",
+        "do you offer klarna",
+        "buy now pay later",
+        "finance options",
+        "can i pay on delivery",
+        "do you accept apple pay",
+        "credit card accepted",
+        "pay in three",
+        "spread the cost",
+        "split payments",
+        "which cards do you take",
+        "can i pay with google pay"
+      ],
+      "responses": [
+        "We take Visa, Mastercard, Amex, PayPal, Apple Pay and Google Pay. Klarna splits any order over £150 into three payments with no interest.",
+        "Cards including Amex, PayPal, Apple Pay and Google Pay all work. Orders above £150 can be split into three interest-free Klarna payments."
+      ]
+    },
+    {
+      "tag": "store_hours",
+      "patterns": [
+        "what are your opening hours",
+        "when are you open",
+        "store hours",
+        "are you open on sunday",
+        "what time do you close",
+        "opening times",
+        "are you open today",
+        "bank holiday hours",
+        "when does the shop open",
+        "where are you located",
+        "shop address",
+        "where is the shop",
+        "how late are you open",
+        "what time do you open tomorrow",
+        "closing time",
+        "shop location"
+      ],
+      "responses": [
+        "The Leeds shop opens 9am-6pm Monday to Saturday and 10am-4pm on Sunday. We're at 14 Kirkgate, LS1. The workshop closes an hour before the shop.",
+        "Open 9am-6pm weekdays and Saturday, 10am-4pm Sunday, at 14 Kirkgate, Leeds LS1. Workshop drop-off stops an hour before closing."
+      ]
+    },
+    {
+      "tag": "stock_availability",
+      "patterns": [
+        "is this in stock",
+        "do you have it in blue",
+        "when will it be back in stock",
+        "out of stock",
+        "availability",
+        "restock date",
+        "do you have size medium available",
+        "is the model available",
+        "stock check",
+        "notify me when available",
+        "when is it back",
+        "do you have any left",
+        "is it available in large",
+        "more coming in",
+        "back in stock date",
+        "any left in blue",
+        "when will you restock this",
+        "when will more stock arrive",
+        "next restock date",
+        "when is the next restock happening",
+        "when will you have more stock coming in",
+        "date for restocking this item",
+        "when will you have more of this coming in",
+        "when will fresh stock come in",
+        "date for more units coming in"
+      ],
+      "responses": [
+        "Live stock shows on each product page next to the size selector. Sold-out sizes have a 'Notify me' button and restocks usually arrive within 3 weeks.",
+        "Each product page shows live stock per size. Tap 'Notify me' on a sold-out option; most restocks land inside 3 weeks."
+      ]
+    },
+    {
+      "tag": "discounts",
+      "patterns": [
+        "do you have any discount",
+        "promo code",
+        "any offers",
+        "student discount",
+        "coupon code",
+        "sale",
+        "is there a voucher",
+        "discount for members",
+        "black friday deals",
+        "can i get a better price",
+        "price match",
+        "cheaper elsewhere",
+        "got any deals on",
+        "is there a discount code",
+        "reduce the price",
+        "do you do offers"
+      ],
+      "responses": [
+        "Students get 10% with a verified account. We price-match any UK retailer holding stock, just send the link. Seasonal sales run in January and July.",
+        "There's a verified 10% student discount, and we'll price-match any in-stock UK retailer if you send us the link. Big sales run each January and July."
+      ]
+    },
+    {
+      "tag": "test_ride",
+      "patterns": [
+        "can i test ride",
+        "try before i buy",
+        "demo bike",
+        "test ride booking",
+        "can i see the bike in person",
+        "do you have a demo fleet",
+        "try a bike out",
+        "is a test ride free",
+        "can i ride it before buying",
+        "try the bike first",
+        "test one in the shop"
+      ],
+      "responses": [
+        "Test rides are free, booked in the shop or online, and last 30 minutes with ID left at the counter. Demo fees come off the price if you buy that model within 7 days.",
+        "Yes, free 30-minute test rides with ID at the counter. If you buy the same model within a week, any demo fee is refunded."
+      ]
+    },
+    {
+      "tag": "assembly",
+      "patterns": [
+        "does the bike come assembled",
+        "do i need to build it",
+        "assembly required",
+        "how much assembly",
+        "is it ready to ride",
+        "do you assemble the bike",
+        "setup instructions",
+        "how do i put it together",
+        "does it come built",
+        "do i have to build it myself",
+        "is it ready to ride out of the box",
+        "arrives assembled",
+        "building it at home",
+        "tools needed to build",
+        "does it arrive assembled",
+        "is it already built when it arrives",
+        "comes pre assembled",
+        "does the bike arrive already built",
+        "is assembly done before it arrives",
+        "will it turn up fully assembled",
+        "does it come already assembled when delivered",
+        "is it pre built when it arrives at my door",
+        "comes fully built out of the box"
+      ],
+      "responses": [
+        "Bikes arrive 90% built: fit the front wheel, bars, pedals and saddle, about 20 minutes with the supplied tools. Free in-store assembly is available if you collect.",
+        "They ship 90% assembled, so you attach the front wheel, handlebars, pedals and saddle in roughly 20 minutes. Collect in store and we'll build it for free."
+      ]
+    },
+    {
+      "tag": "human_handoff",
+      "patterns": [
+        "talk to a human",
+        "i want an agent",
+        "speak to someone",
+        "customer service number",
+        "real person please",
+        "connect me to support",
+        "this isnt helping",
+        "agent",
+        "live chat with staff",
+        "call support",
+        "i want to complain",
+        "complaint",
+        "get me staff",
+        "you are not understanding me get someone",
+        "this bot is useless get a human",
+        "escalate this",
+        "transfer me",
+        "speak to the manager"
+      ],
+      "responses": [
+        "Passing you to the team. They're on live chat 9am-6pm, reachable at help@northwindcycles.example or +1 555 0142. I've attached this conversation so you won't repeat yourself.",
+        "Connecting you with a person. Live chat runs 9am-6pm; otherwise email help@northwindcycles.example or call +1 555 0142. This transcript goes with you."
+      ],
+      "escalate": true
+    },
+    {
+      "tag": "bot_identity",
+      "patterns": [
+        "are you a robot",
+        "are you human",
+        "what are you",
+        "are you a bot",
+        "who am i talking to",
+        "is this a real person",
+        "are you ai",
+        "what can you do",
+        "how do you work",
+        "help",
+        "what do you know",
+        "are you an actual person",
+        "what topics do you cover",
+        "what are you able to do",
+        "are you automated",
+        "is this a bot or a person",
+        "am i talking to an actual human",
+        "are you a computer program",
+        "is there an actual human on this chat",
+        "am i chatting with a real agent",
+        "is a real person replying to me"
+      ],
+      "responses": [
+        "I'm Northwind's support bot, trained on the shop's own policies. I handle orders, shipping, returns, sizing, warranty and service bookings, and I hand over to staff for anything else.",
+        "A bot, trained only on Northwind policies. Orders, delivery, returns, sizing, warranty and workshop bookings are my range; staff take everything else."
+      ],
+      "quick_replies": [
+        "Track my order",
+        "Return policy",
+        "Talk to a person"
+      ]
+    },
+    {
+      "tag": "affirmative",
+      "patterns": [
+        "yes",
+        "yes please",
+        "yeah",
+        "yep",
+        "sure",
+        "ok",
+        "okay",
+        "go ahead",
+        "sounds good",
+        "please do",
+        "correct",
+        "that's right",
+        "yes go ahead please",
+        "yes do that"
+      ],
+      "responses": [
+        "Done. The courier link is in your order page under Orders > Track.",
+        "Sent. You'll find it under Orders > Track in your account."
+      ]
+    },
+    {
+      "tag": "negative",
+      "patterns": [
+        "no",
+        "no thanks",
+        "nope",
+        "not really",
+        "that's not it",
+        "thats wrong",
+        "incorrect",
+        "no thank you",
+        "nah",
+        "no dont",
+        "not that one"
+      ],
+      "responses": [
+        "Understood. What would you like instead?",
+        "No problem. Tell me what you're after and I'll try again."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "note": "Held-out utterances. None of these appear verbatim in intents.json, so accuracy here reflects generalisation, not memorisation. out_of_scope items must return 'fallback'.",
+  "cases": [
+    {"text": "hello there", "expected": "greeting"},
+    {"text": "morning!", "expected": "greeting"},
+    {"text": "hey, quick question", "expected": "greeting"},
+    {"text": "ok bye then", "expected": "goodbye"},
+    {"text": "that is everything thanks", "expected": "goodbye"},
+    {"text": "cheers mate, big help", "expected": "thanks"},
+    {"text": "thankyou so much", "expected": "thanks"},
+
+    {"text": "i ordered a bike last week and it hasnt turned up", "expected": "order_status"},
+    {"text": "can you tell me where my parcel is", "expected": "order_status"},
+    {"text": "any update on my delivery", "expected": "order_status"},
+    {"text": "i need a tracking link", "expected": "order_status"},
+
+    {"text": "how long until it arrives", "expected": "shipping_info"},
+    {"text": "whats the postage on a helmet", "expected": "shipping_info"},
+    {"text": "is next day delivery available", "expected": "shipping_info"},
+    {"text": "how much do you charge for shiping", "expected": "shipping_info"},
+
+    {"text": "can you send to dublin", "expected": "international_shipping"},
+    {"text": "do you post to germany", "expected": "international_shipping"},
+
+    {"text": "i want to send this back", "expected": "returns_policy"},
+    {"text": "how many days do i have to return something", "expected": "returns_policy"},
+    {"text": "the jacket is too small, can i swap it", "expected": "returns_policy"},
+    {"text": "i would like my money back please", "expected": "returns_policy"},
+
+    {"text": "please stop my order going out", "expected": "cancel_order"},
+    {"text": "i made a mistake, cancel it", "expected": "cancel_order"},
+
+    {"text": "im 182cm which frame", "expected": "sizing_help"},
+    {"text": "how do i know which size fits me", "expected": "sizing_help"},
+    {"text": "is large too big for me", "expected": "sizing_help"},
+
+    {"text": "my brakes are squealing, can you look at it", "expected": "service_booking"},
+    {"text": "i need to get my bike serviced", "expected": "service_booking"},
+    {"text": "how much for a tune up", "expected": "service_booking"},
+
+    {"text": "the frame has a crack in it", "expected": "warranty"},
+    {"text": "how long is it covered for", "expected": "warranty"},
+    {"text": "the wheel broke after two weeks", "expected": "warranty"},
+
+    {"text": "can i pay monthly", "expected": "payment_options"},
+    {"text": "do you accept american express", "expected": "payment_options"},
+
+    {"text": "what time do you shut", "expected": "store_hours"},
+    {"text": "are you open this sunday", "expected": "store_hours"},
+    {"text": "whereabouts is the shop", "expected": "store_hours"},
+
+    {"text": "have you got this in medium", "expected": "stock_availability"},
+    {"text": "when are you getting more in", "expected": "stock_availability"},
+
+    {"text": "any student offers", "expected": "discounts"},
+    {"text": "will you match a cheaper price", "expected": "discounts"},
+
+    {"text": "could i try one out first", "expected": "test_ride"},
+    {"text": "do you do demo rides", "expected": "test_ride"},
+
+    {"text": "will it arrive built", "expected": "assembly"},
+    {"text": "how much do i have to assemble", "expected": "assembly"},
+
+    {"text": "put me through to a person", "expected": "human_handoff"},
+    {"text": "you are not understanding me, get staff", "expected": "human_handoff"},
+    {"text": "i want to make a complaint", "expected": "human_handoff"},
+
+    {"text": "am i speaking to a real person", "expected": "bot_identity"},
+    {"text": "what can you actually help with", "expected": "bot_identity"},
+
+    {"text": "do you sell kayaks", "expected": "fallback"},
+    {"text": "what is the capital of peru", "expected": "fallback"},
+    {"text": "write me a poem about mountains", "expected": "fallback"},
+    {"text": "who won the football last night", "expected": "fallback"},
+    {"text": "asdkjh qweoiu zxcvb", "expected": "fallback"}
+  ]
+}
